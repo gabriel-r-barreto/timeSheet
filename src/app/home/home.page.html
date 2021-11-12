@@ -1,0 +1,28 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true" id="cont">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <form [formGroup]="profileForm">
+      
+      <ion-input placeholder="Usuário" [(ngModel)]="user"></ion-input>
+
+
+      <ion-input class="mt-3" placeholder="Senha" [(ngModel)]="password"></ion-input>
+
+
+      <ion-button color="warning" (click)="login()"> <p>Login</p> </ion-button>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,88 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>spot</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <div class="row">
+    <ion-icon class="logoutBtn" name="close-circle-outline" (click)="logout()"></ion-icon>
+
+    <h2 class="name" style="color: white;">Olá, {{name}}</h2>
+  </div>
+  
+
+
+  <ion-label class="top">{{currentDate}}</ion-label>
+
+  <ion-label class="hour">{{localdate}}</ion-label>
+
+  <div class="buttons">
+
+    <div class="row">
+      <ion-button color="#1E5084" (click)="creatTimeSheet()"> Cheguei </ion-button>
+      <ion-button color="#1E5084"> Fui Almoçar </ion-button>
+    </div>
+
+    <div class="row">
+      <ion-button color="#1E5084"> Voltei </ion-button>
+      <ion-button color="#1E5084"> Fui </ion-button>
+    </div>
+
+
+  </div>
+
+
+  <div class="table">
+    <ion-grid *ngFor="let item of data">
+      <ion-row>
+        <ion-col class="ion-align-self-center">
+          <div>
+            <p>DATA</p>
+            <ion-input value="{{item.start | date:'dd/MM/yyyy'}}"></ion-input>
+          </div>
+        </ion-col>
+        <ion-col class="ion-align-self-end ml-3">
+          <div>
+            <ion-icon name="close-outline" class="btn-delete" (click)="removeTimeSheet(item)"></ion-icon>
+            <p>HORA INICIO</p>
+            <ion-input value="{{item.start | date : 'HH:mm'}}"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-align-self-center">
+          <div>
+            <p>ALMOÇO INICIO</p>
+            <ion-input value="{{item.startLunch | date : 'HH:mm'}}"></ion-input>
+          </div>
+        </ion-col>
+        <ion-col class="ion-align-self-end ml-3">
+          <div>
+            <p>ALMOÇO FIM</p>
+            <ion-input value="{{item.endLunch | date : 'HH:mm'}}"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-align-self-center">
+          <div>
+            <p>HORA FIM</p>
+            <ion-input value="{{item.end | date : 'HH:mm'}}"></ion-input>
+          </div>
+        </ion-col>
+        <ion-col class="ion-align-self-end ml-3">
+          <div>
+            <p>TEMPO</p>
+            <ion-input clearInput></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+
+
+</ion-content>
